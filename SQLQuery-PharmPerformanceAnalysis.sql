@@ -9,7 +9,7 @@ WITH cte AS (
             ELSE NULL
         END AS Score
     FROM Students s
-    INNER JOIN student_exams se 
+    INNER JOIN student_exams se -- Linking Table needed due to many-many relationship between Students and Exams
         ON s.StudentID = se.StudentID
     INNER JOIN exams e 
         ON se.ExamID = e.ExamID
